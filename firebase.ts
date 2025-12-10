@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 // --- IMPORTANT : REMPLACEZ CECI PAR VOTRE CONFIGURATION FIREBASE ---
 // Vous trouvez ces infos dans la console Firebase > Paramètres du projet > Général
 const firebaseConfig = {
-  apiKey: "AIzaSy...", 
-  authDomain: "votre-projet.firebaseapp.com",
-  projectId: "votre-projet",
-  storageBucket: "votre-projet.appspot.com",
-  messagingSenderId: "...",
-  appId: "..."
+  apiKey: "AIzaSyAEWkP8fbuOw8JPGztzJBypG9UuyqgRspg",
+  authDomain: "cqfd-1b117.firebaseapp.com",
+  projectId: "cqfd-1b117",
+  storageBucket: "cqfd-1b117.firebasestorage.app",
+  messagingSenderId: "434291769806",
+  appId: "1:434291769806:web:e9ab3c84626265baa06b9f"
 };
 
 // Initialize Firebase
