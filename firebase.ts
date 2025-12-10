@@ -1,10 +1,9 @@
 
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, initializeFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// --- IMPORTANT : REMPLACEZ CECI PAR VOTRE CONFIGURATION FIREBASE ---
-// Vous trouvez ces infos dans la console Firebase > Paramètres du projet > Général
+// Configuration Firebase pour le projet CQFD
 const firebaseConfig = {
   apiKey: "AIzaSyAEWkP8fbuOw8JPGztzJBypG9UuyqgRspg",
   authDomain: "cqfd-1b117.firebaseapp.com",
@@ -16,5 +15,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+
+// On utilise initializeFirestore avec ignoreUndefinedProperties pour éviter les erreurs
+// si on tente de sauvegarder des champs optionnels (undefined)
+export const db = initializeFirestore(app, {
+    ignoreUndefinedProperties: true
+});
+
 export const auth = getAuth(app);
