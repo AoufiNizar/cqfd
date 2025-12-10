@@ -1,94 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://lucide.dev/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO PRIMARY METADATA -->
-    <title>CQFD - Cours et Exercices de Mathématiques (Collège & Lycée)</title>
-    <meta name="description" content="Plateforme de soutien scolaire en mathématiques par M. Aoufi. Cours gratuits, exercices corrigés, flashcards et préparation aux examens pour le collège et le lycée." />
-    <meta name="keywords" content="mathématiques, maths, collège, lycée, cours, exercices, corrigés, brevet, bac, soutien scolaire" />
-    <meta name="author" content="Aoufi Nizar" />
-
-    <!-- OPEN GRAPH / FACEBOOK -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="CQFD - Ce Qu'il Fallait Démontrer" />
-    <meta property="og:description" content="Ressources mathématiques complètes pour réussir son année scolaire." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop" />
-
+    <title>FINA</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
-      integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
-      crossorigin="anonymous"
-    />
     <script>
       tailwind.config = {
-        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              space: {
-                950: '#020617', // Very dark blue/black
-                900: '#0f172a', // Dark slate
-                800: '#1e293b', // Lighter slate
-                700: '#334155',
-                accent: '#38bdf8', // Light blue/cyan
-                highlight: '#818cf8', // Indigo/Purple
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
+              primary: '#4f46e5',
+              secondary: '#64748b',
+              success: '#22c55e',
+              warning: '#f59e0b',
+              danger: '#ef4444',
+              absent: '#94a3b8',
             }
           }
         }
       }
     </script>
-    <style>
-      body {
-        background-color: #020617;
-        color: #f1f5f9;
-      }
-      /* Custom Scrollbar for dark theme */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
-      }
-      .katex-display {
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding: 0.5rem 0;
-      }
-    </style>
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
-    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
-    "katex": "https://aistudiocdn.com/katex@^0.16.27",
-    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://esm.sh/recharts@2.12.0?external=react,react-dom",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.7"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
+  <body class="bg-gray-50 text-slate-900 antialiased">
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

@@ -1,79 +1,44 @@
-
-export interface Flashcard {
-  id: string;
-  question: string;
-  answer: string;
-  difficulty?: number; // 1 (Easy) to 3 (Hard)
+export enum HomeworkStatus {
+  FAIT = 'FAIT',
+  NON_FAIT = 'NON_FAIT',
+  INCOMPLET = 'INCOMPLET',
+  ABSENT = 'ABSENT',
 }
 
-export interface Sequence {
+export interface Student {
   id: string;
-  title: string;
-  category?: string;       // New field for sub-category (e.g., "G. Spécialité")
-  pdfCourse?: string;      // URL Google Drive / PDF
-  pdfExercises?: string;   // URL Google Drive / PDF
-  pdfCorrection?: string;  // URL Google Drive / PDF
-  flashcards: Flashcard[];
+  name: string;
+  classId: string;
 }
 
-export interface Level {
+export interface ClassGroup {
   id: string;
-  name: string; // e.g., "Troisième", "Seconde"
-  group: 'COLLEGE' | 'LYCEE';
-  categories?: string[]; // List of available sub-categories for this level
-  sequences: Sequence[];
+  name: string;
 }
 
-export interface BlogPost {
+export interface HomeworkSession {
   id: string;
-  title: string;
-  content: string; // Supports Markdown/Latex
-  imageUrl?: string;
-  date: string;
-  author: string;
-  tags?: string[];
-}
-
-export interface RentreeDay {
-  day: number; // 1 to 14
-  title: string;
+  classId: string;
+  date: string; // ISO string
   description: string;
-  link?: string; // Link to PDF resource
-  externalLink?: string; // Link to Exercise platform (CoopMaths)
-  calculator?: boolean; // true = Allowed, false = Forbidden
 }
 
-export interface RentreeTrack {
+export interface HomeworkRecord {
   id: string;
-  name: string; // e.g., "Vers la Seconde", "Vers la Terminale Spé Math"
-  days: RentreeDay[];
+  sessionId: string;
+  studentId: string;
+  status: HomeworkStatus;
 }
 
-export interface SiteStats {
-  totalVisits: number;
-  toolsUsage: {
-    course: number;
-    exercises: number;
-    correction: number;
-    flashcards: number;
-  };
-  levelVisits: Record<string, number>; // levelId -> count
-  sequenceVisits: Record<string, number>; // sequenceId -> count
-}
-
-export interface AboutPageData {
-  title: string;
-  subtitle: string;
-  authorName: string;
-  authorRole: string;
-  authorPhotoUrl?: string; // if empty, shows initials
-  bioContent: string; // Rich text with markdown/latex
+export interface SchoolPeriod {
+  id: string;
+  name: string;
+  startDate: string;
+  endDate: string;
 }
 
 export type ViewState = 
-  | { type: 'HOME' }
-  | { type: 'LEVEL'; levelId: string }
-  | { type: 'RENTREE' }
-  | { type: 'BLOG' }
-  | { type: 'ABOUT' }
-  | { type: 'STATS' };
+  | 'DASHBOARD' 
+  | 'CLASS_DETAILS' 
+  | 'NEW_SESSION' 
+  | 'SESSION_HISTORY';
