@@ -8,7 +8,7 @@ import {
   BrainCircuit,
   Layout,
   ChevronLeft,
-  CloudUpload, 
+  UploadCloud, 
   AlertTriangle,
   Library,
   FileText,
@@ -376,7 +376,7 @@ const App: React.FC = () => {
                     disabled={isSaving}
                     className={`flex items-center gap-1 px-3 py-1 rounded transition-colors font-bold ${isSaving ? 'bg-green-600/50 cursor-wait' : 'bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20'}`}
                  >
-                    {isSaving ? <RefreshCw size={12} className="animate-spin"/> : <CloudUpload size={12}/>}
+                    {isSaving ? <RefreshCw size={12} className="animate-spin"/> : <UploadCloud size={12}/>}
                     {isSaving ? 'Publication...' : 'Publier les modifications'}
                  </button>
 
